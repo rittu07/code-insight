@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Code Assistant</h1>
+        <div id="connection-status" class="badge low" style="display:none">Offline</div>
+    </header>
+
+    <nav>
+        <button class="nav-btn active" data-target="tab-explain">Explain</button>
+        <button class="nav-btn" data-target="tab-repo">Repo Check</button>
+        <button class="nav-btn" data-target="tab-settings">Settings</button>
+    </nav>
+
+    <main>
+        <!-- Explain / Q&A Tab -->
+        <div id="tab-explain" class="section active">
+            <div class="card">
+                <label class="label">Ask a Question or Paste Code</label>
+                <textarea id="user-input" rows="4"
+                    placeholder="Paste code here or ask: 'How do I center a div?'"></textarea>
+            </div>
+
+            <button id="ask-btn" class="btn-primary">
+                <span>Explain / Answer</span>
+            </button>
+
+            <div id="explain-result" class="result-area hidden">
+                <p class="placeholder-text">Result will appear here...</p>
+            </div>
+        </div>
+
+        <!-- Repo Analysis Tab -->
+        <div id="tab-repo" class="section">
+            <div id="repo-status" class="card">
+                <p>Navigate to a GitHub repository to analyze it.</p>
+            </div>
+
+            <div id="repo-stats" class="hidden">
+                <div class="card">
+                    <label class="label">Complexity Overview</label>
+                    <div class="complexity-item">
+                        <span>Total Files</span>
+                        <span id="stat-files" class="badge">0</span>
+                    </div>
+                    <div class="complexity-item">
+                        <span>Languages</span>
+                        <span id="stat-langs" class="badge">Unknown</span>
+                    </div>
+                    <div class="complexity-item">
+                        <span>Est. Complexity</span>
+                        <span id="stat-complexity" class="badge">N/A</span>
+                    </div>
+                </div>
+
+                <button id="analyze-deep-btn" class="btn-primary" style="margin-top: 1rem;">
+                    Analyze Deeply (AI)
+                </button>
+            </div>
+        </div>
+
+        <!-- Settings Tab -->
+        <div id="tab-settings" class="section">
+            <div class="card">
+                <label class="label">API Key (Gemini/OpenAI)</label>
+                <input type="password" id="api-key" placeholder="Enter your API Key">
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">
+                    Key is stored locally. Required for AI features.
+                </p>
+            </div>
+            <div class="card">
+                <label class="label">Model Provider</label>
+                <select id="model-provider"
+                    style="width:100%; padding:0.5rem; background:#0f172a; color:white; border:1px solid var(--border-color); border-radius:8px;">
+                    <option value="gemini">Google Gemini</option>
+                    <option value="openai">OpenAI (GPT-4)</option>
+                </select>
+            </div>
+            <button id="save-settings" class="btn-primary">Save Settings</button>
+        </div>
+    </main>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
