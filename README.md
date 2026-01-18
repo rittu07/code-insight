@@ -19,7 +19,7 @@ CodeInsight is a powerful Chrome extension designed to help developers understan
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/code-insight.git
+    git clone https://github.com/rittu07/code-insight.git
     ```
 2.  Open Chrome and navigate to `chrome://extensions/`.
 3.  Enable **Developer mode** in the top right.
@@ -30,3 +30,4 @@ CodeInsight is a powerful Chrome extension designed to help developers understan
 1.  **Explain Code**: Highlight a snippet, right-click, and select "Explain Code".
 2.  **Analyze Repo**: Navigate to a GitHub repository page and click the extension icon to see analysis stats.
 3.  **Ask Question**: Select a problem description and choose "Explain Question" to get pseudocode.
+
